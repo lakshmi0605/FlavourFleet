@@ -1,0 +1,46 @@
+{
+  "name": "rapid-munch",
+  "version": "1.0.0",
+  "description": "Food Delivery Application",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakshmi0605/rapid-munch.git"
+  },
+  "keywords": [
+    "RapidMunch",
+    "Food",
+    "delivery",
+    "restaurants",
+    "fast",
+    "food",
+    "online",
+    "food"
+  ],
+  "author": "Lakshmi Panguluri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lakshmi0605/rapid-munch/issues"
+  },
+  "homepage": "https://github.com/lakshmi0605/rapid-munch#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "parcel": "^2.11.0",
+    "postcss": "^8.4.33",
+    "postcss-custom-properties": "^13.3.4",
+    "postcss-url": "^10.1.3",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browsersList": [
+    "last 2 versions"
+  ]
+}
