@@ -3,6 +3,12 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
+import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
+import About from "./components/About";
+import Error from "./components/Error";
+import Contact from "./components/Contact";
+import User from "./components/User";
+
 //without React
 // const heading = document.createElement("h1");
 // heading.innerText = "Heading";
@@ -38,11 +44,42 @@ import Footer from "./components/Footer";
 const AppLayout = ()=>{
     return(<div className=" flex flex-col min-h-screen">
         <Header />
-        <Body />
+        <Outlet />
         <Footer/>
     </div>)
 }
 
+const appRouter = createBrowserRouter([
+    {
+        path: '/',
+        element : <AppLayout />,
+        children : [
+            {
+                path: '/',
+                element : <Body />,
+            },
+            {
+                path: '/about',
+                element : <About />,
+            },
+            {
+                path: '/contact',
+                element : <Contact />,
+            },
+            {
+                path: '/user',
+                element : <User />,
+            },
+        ],
+        errorElement : <Error />,
+    },
+    
+
+])
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);
+
+export default AppLayout;
+
 
