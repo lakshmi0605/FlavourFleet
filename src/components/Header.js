@@ -2,20 +2,22 @@ import myLogo from "../images/Logo.png"
 import { Link } from "react-router-dom";
 
 const Header = ()=>{
-    return (<div className="flex justify-between">
+    return (
+    <header className="sticky top-0 bg-gray-50 z-50">
+    <div className="flex justify-between shadow">
         <div> 
         <Link to="/" ><img className="w-32 p-2 mx-10" src={myLogo} alt="Logo" /></Link>
         </div>
         <div >
             <ul className="flex items-center p-2 m-4">
-                <li className="p-6 font-bold text-lg"><Link to="/" >Home</Link></li>
-                <li className="p-6 font-bold text-lg"><Link to="/about" >About</Link></li>
-                <li className="p-6 font-bold text-lg"><Link to="/contact" >Contact</Link></li>
-                <li className="p-6 font-bold text-lg"><Link to="/user" >Login</Link></li>
+                <li className="p-6 hover:scale-125 text-lg"><Link to="/" className="focus:text-blue-800">Home</Link></li>
+                <li className="p-6 hover:scale-125 text-lg"><Link to="/about" className="focus:text-blue-800">About</Link></li>
+                <li className="p-6 hover:scale-125 text-lg"><Link to="/contact" className="focus:text-blue-800">Contact</Link></li>
+                <li className="p-6 hover:scale-125 text-lg"><Link to="/user" className="focus:text-blue-800">Login</Link></li>
             </ul>
         </div>
         
-    </div>)
+    </div></header>)
 }
 
 export default Header;

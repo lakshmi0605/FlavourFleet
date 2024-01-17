@@ -4,63 +4,34 @@ import { RESTAURANTS_URL, CORS_URL
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useRestaurantList from "../../utils/useRestaurantList";
 
 const Body = () => {
 
-    const [resList, setResList] = useState([]);
-    const [filteredResList,setFilteredResList] = useState([]);
+    // const [resList, setResList] = useState([]);
+    // const [filteredResList,setFilteredResList] = useState([]);
     const [searchText, setSearchText]= useState("");
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
-
-    useEffect(()=>{
-        fetchData();
-    },[])
-
-    //fetching data from API
-    const fetchData = async() => {
-        const resData = await fetch(CORS_URL + RESTAURANTS_URL);
-        const resJSONData = await resData.json();
-        // console.log(resJSONData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setResList(resJSONData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredResList(resJSONData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-
-    }
+    const resList = useRestaurantList();
 
     //search filter implementation
-    const filterRestaurants = () =>{
-        const filteredResList = resList.filter((res) => 
+    const filteredRestaurants = resList.filter((res) => 
         res.info.name.toLowerCase().includes(searchText.toLowerCase()));
-        setFilteredResList(filteredResList);
-    }
-
-    //debouncing function
-    // const debounce = (func, delay) => {
-    //     let timeoutId;
-    //     return function (...args) {
-    //       clearTimeout(timeoutId);
-    //       timeoutId = setTimeout(() => func.apply(this, args), delay);
-    //     };
-    //   };
-
-    // //debounced search function
-    // const debouncedSearch = debounce(filterRestaurants, 300);
     
-    if(resList.length === 0){ return (<div className="flex flex-wrap"><Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /></div>)};
 
-   
-
-    return  (<div className="mx-14">
-        <div>
-        <input className="border border-black m-8 p-1 rounded" value={searchText} onChange={(e) => {
-            setSearchText(e.target.value);
-            //filterRestaurants();
-        }} onKeyDown={(event)=>{if(event.key === "Enter"){filterRestaurants();}}}/>
-        <button className="bg-green-200 m-2 p-2 rounded-md" onClick={filterRestaurants}>Search</button>
-        <button className="bg-gray-200 m-4 p-2 rounded-md" >Top Rated Restaurants</button>
-        </div>
+    return  resList.length === 0 ? ((<div className="flex flex-wrap"><Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /></div>)) :(<div className="mx-14">
+        <div className="text-center m-10">
+            <h1 className="font-bold text-9xl text-blue-950 "><span className="tracking-[-0.1em]">RAPID  </span> <span className="tracking-[-0.13em]">MUNCH</span></h1>
+            <h3 className="text-3xl">Flavor on the fly!</h3>
+       
+          <input type="text"
+            placeholder="Search Restaurants"
+            className="w-1/2 h-12 p-4 mt-4 rounded-2xl border-2 border-gray-300 focus:outline-none focus:border-blue-500" value={searchText} onChange={(e) => { setSearchText(e.target.value);}} 
+          />
+        </div> 
         <div className="flex flex-wrap items-stretch "> 
-        {filteredResList.map((res)=> 
+        {filteredRestaurants.map((res)=> 
        (
             <Link to={"/restaurants/" + res?.info?.id} key={res?.info?.id}>
                 <div>

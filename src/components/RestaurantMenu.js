@@ -22,7 +22,7 @@ const RestaurantMenu = ()=>{
     const categoryItems = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((category)=> category?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
 
     return (
-    <div className="text-center mx-40">
+    <div className="text-center mx-60">
         <div className=" mt-4 p-4">
         <div className="flex justify-between items-center ">
         <div className="text-left">
@@ -31,7 +31,7 @@ const RestaurantMenu = ()=>{
         <h2 className="">{costForTwoMessage}</h2>
         </div>
         <div className="bg-white-50 shadow my-4 p-2 border border-gray">
-            <h2 className="text-center">★ {avgRatingString} </h2>
+            <h2 className="text-center text-green-600">★ {avgRatingString} </h2>
             <hr className="h-px my-2 bg-gray-200 border-0"></hr>
             <h2 className="text-xs">{totalRatingsString}</h2>
         </div>
