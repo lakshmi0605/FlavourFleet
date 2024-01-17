@@ -10,6 +10,12 @@ const RestaurantMenu = ()=>{
 
     const resInfo = useRestaurantMenu(resId);
 
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const handleAccordion= (index) => {
+        setActiveIndex((prev) => (prev === index ? null : index));
+      };
+
     if (resInfo === null) return (<div className="text-center"><Shimmer /></div>)
 
     const {name, cuisines, costForTwoMessage,totalRatingsString, avgRatingString} = resInfo?.cards[0]?.card.card?.info;
@@ -32,7 +38,7 @@ const RestaurantMenu = ()=>{
         </div>
         </div>
         <div>
-        {categoryItems.map((category)=><ResMenuCategory  key={category?.card?.card?.title} menuCategory={category} />)}
+        {categoryItems.map((category,index)=><ResMenuCategory  key={category?.card?.card?.title} menuCategory={category} isActive={index === activeIndex ? true : false} setActiveIndex={()=> handleAccordion(index)}/>)}
         </div>
     </div>)
 }
