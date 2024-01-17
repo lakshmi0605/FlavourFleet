@@ -1,10 +1,9 @@
 import { RESIMG_URL } from "../../utils/constants";
-import rating from "../images/StarRating.png"
 import  RestaurantMenu  from "./RestaurantMenu";
 import { Link } from "react-router-dom";
 
 const RestaurantCard = ({resData}) =>{
-    console.log(resData);
+
     const {name, cuisines, costForTwo, sla, cloudinaryImageId, avgRatingString,id} = resData.info;
     return (
         <Link to={"/restaurants/" + id } ><div className="m-3 p-2 w-[300px] rounded-lg hover:scale-110" >
