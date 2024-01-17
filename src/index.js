@@ -8,6 +8,7 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import User from "./components/User";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 //without React
 // const heading = document.createElement("h1");
@@ -69,6 +70,10 @@ const appRouter = createBrowserRouter([
             {
                 path: '/user',
                 element : <User />,
+            },
+            {
+                path: '/restaurants/:resId',
+                element : <RestaurantMenu />,
             },
         ],
         errorElement : <Error />,

@@ -1,4 +1,4 @@
-import { MENU_API, CORS_URL
+import { RESTAURANTS_URL, CORS_URL
  } from "../../utils/constants";
  import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
@@ -16,7 +16,7 @@ const Body = () => {
 
     //fetching data from API
     const fetchData = async() => {
-        const resData = await fetch(CORS_URL + MENU_API);
+        const resData = await fetch(CORS_URL + RESTAURANTS_URL);
         const resJSONData = await resData.json();
         // console.log(resJSONData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setResList(resJSONData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -45,16 +45,16 @@ const Body = () => {
     
     if(resList.length === 0){ return (<div className="flex flex-wrap"><Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /> <Shimmer /></div>)};
 
-    return  (<div>
+    return  (<div className="mx-14">
         <div>
-        <input className="border border-black m-8 p-1" value={searchText} onChange={(e) => {
+        <input className="border border-black m-8 p-1 rounded" value={searchText} onChange={(e) => {
             setSearchText(e.target.value);
             //filterRestaurants();
         }} onKeyDown={(event)=>{if(event.key === "Enter"){filterRestaurants();}}}/>
         <button className="bg-green-200 m-2 p-2 rounded-md" onClick={filterRestaurants}>Search</button>
         <button className="bg-gray-200 m-4 p-2 rounded-md" >Top Rated Restaurants</button>
         </div>
-        <div className="flex flex-wrap"> 
+        <div className="flex flex-wrap items-stretch "> 
         {filteredResList.map((res)=> <RestaurantCard key={res.info.id} resData={res} />)}
         </div>
         

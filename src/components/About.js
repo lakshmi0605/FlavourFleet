@@ -2,7 +2,7 @@ import ceo_image from "../images/CEO.png";
 import team_image from "../images/Team.jpeg";
 const About = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen">
       {/* Section 1: Text to the left, Image to the right */}
       <div className="container mx-auto p-8 flex items-center">
         <div className="flex-1 pr-8">
