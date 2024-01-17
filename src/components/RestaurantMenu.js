@@ -26,7 +26,7 @@ const RestaurantMenu = ()=>{
         </div>
         <div className="bg-white-50 shadow my-4 p-2 border border-gray">
             <h2 className="text-center">★ {avgRatingString} </h2>
-            <hr className="h-10px my-2 bg-gray-200 border-0"></hr>
+            <hr className="h-px my-2 bg-gray-200 border-0"></hr>
             <h2 className="text-xs">{totalRatingsString}</h2>
         </div>
         </div>
