@@ -9,6 +9,9 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import User from "./components/User";
 import RestaurantMenu from "./components/RestaurantMenu";
+import appStore from "../utils/appStore";
+import { Provider } from "react-redux";
+import Cart from "./components/Cart";
 
 //without React
 // const heading = document.createElement("h1");
@@ -44,9 +47,11 @@ import RestaurantMenu from "./components/RestaurantMenu";
 
 const AppLayout = ()=>{
     return(<div className=" flex flex-col min-h-screen">
-        <Header />
-        <Outlet />
-        <Footer/>
+        <Provider store={appStore} >
+            <Header />
+            <Outlet />
+            <Footer/>
+        </Provider>
     </div>)
 }
 
@@ -74,6 +79,10 @@ const appRouter = createBrowserRouter([
             {
                 path: '/restaurants/:resId',
                 element : <RestaurantMenu />,
+            },
+            {
+                path: '/cart',
+                element : <Cart />,
             },
         ],
         errorElement : <Error />,

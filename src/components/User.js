@@ -36,7 +36,7 @@ const User = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="">
       <div className="max-w-md p-8 bg-white shadow-md rounded-md">
         <h2 className="text-2xl font-bold mb-4">User Info</h2>
         {isEditing ? (
