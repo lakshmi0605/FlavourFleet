@@ -1,6 +1,6 @@
-import {CORS_URL, ITEMIMG_URL} from "../../utils/constants";
-import { UseDispatch, useDispatch } from "react-redux";
-import { addItem, removeItem } from "../../utils/cartSlice";
+import {CORS_URL, ITEMIMG_URL} from "../utils/constants";
+import {  useDispatch } from "react-redux";
+import { addItem, removeItem } from "../utils/cartSlice";
 
 const CategoryItem =({itemList})=>{
     const {name, price, description, imageId,defaultPrice} = itemList;

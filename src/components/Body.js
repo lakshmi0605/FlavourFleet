@@ -1,10 +1,10 @@
 import { RESTAURANTS_URL, CORS_URL
- } from "../../utils/constants";
+ } from "../utils/constants";
  import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import useRestaurantList from "../../utils/useRestaurantList";
+import useRestaurantList from "../utils/useRestaurantList";
 
 const Body = () => {
 

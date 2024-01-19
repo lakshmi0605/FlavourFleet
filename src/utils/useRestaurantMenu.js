@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RES_MENU_URL, CORS_URL }  from "../utils/constants";
+import { RES_MENU_URL, CORS_URL }  from "./constants";
 
 const useRestaurantMenu = (resId) => {
   const [resInfo, setResInfo] = useState(null);

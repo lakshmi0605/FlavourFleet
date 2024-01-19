@@ -1,10 +1,10 @@
-import { RESIMG_URL } from "../../utils/constants";
+import { RESIMG_URL } from "../utils/constants";
 import  RestaurantMenu  from "./RestaurantMenu";
 import { Link } from "react-router-dom";
 
 const RestaurantCard = ({resData}) =>{
 
-    const {name, cuisines, costForTwo, sla, cloudinaryImageId, avgRatingString} = resData.info;
+        const {name, cuisines, costForTwo, sla, cloudinaryImageId, avgRatingString} = resData.info;
     return (
         <div className="m-3 p-2 w-[300px] rounded-lg hover:scale-110" >
             <div className="my-2">
