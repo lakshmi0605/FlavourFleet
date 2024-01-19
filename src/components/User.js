@@ -1,46 +1,34 @@
-import { useState } from 'react';
+import { useContext, useRef, useState } from 'react';
+import UserContext from '../utils/userContext';
 
 const User = () => {
-  // Dummy user data (replace with your actual user data)
-  const initialUserData = {
-    username: 'john_doe',
-    email: 'john@example.com',
-    firstName: 'John',
-    lastName: 'Doe',
-  };
+  
+  const {loggedInUser,setUserData} = useContext(UserContext);
+  
+  const firstNameRef = useRef(loggedInUser.firstName)
+  const lastNameRef = useRef(loggedInUser.lastName)
 
-  // State to manage user data
-  const [userData, setUserData] = useState(initialUserData);
-
-  // State to track whether the user is in edit mode
   const [isEditing, setIsEditing] = useState(false);
 
-  // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Perform actions like updating user data in the backend
-    // For now, let's just log the updated data
-    console.log('Updated User Data:', userData);
-    // Exit edit mode
+
+  const saveUserData = () => {
+    const firstName = firstNameRef.current.value;
+    const lastName = lastNameRef.current.value;
+
+    setUserData({
+      ...loggedInUser,
+      ["firstName"]:firstName,
+      ["lastName"]:lastName
+    });
     setIsEditing(false);
   };
 
-  // Function to handle input changes
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    // Update the user data with the new value
-    setUserData((prevUserData) => ({
-      ...prevUserData,
-      [name]: value,
-    }));
-  };
-
   return (
-    <div className="">
-      <div className="max-w-md p-8 bg-white shadow-md rounded-md">
+    <div className="mx-24 my-10">
+      <div className="px-20 py-8 bg-white rounded-md ">
         <h2 className="text-2xl font-bold mb-4">User Info</h2>
         {isEditing ? (
-          <form onSubmit={handleSubmit}>
+          <div>
             <div className="mb-4">
               <label htmlFor="username" className="block text-gray-700 text-sm font-bold mb-2">
                 Username
@@ -49,9 +37,9 @@ const User = () => {
                 type="text"
                 id="username"
                 name="username"
-                value={userData.username}
-                onChange={handleInputChange}
-                className="w-full border p-2 rounded-md"
+                value={loggedInUser.username}
+                className="w-full border p-2 rounded-md bg-gray-100"
+                disabled={true}
                 readOnly
               />
             </div>
@@ -63,9 +51,9 @@ const User = () => {
                 type="email"
                 id="email"
                 name="email"
-                value={userData.email}
-                onChange={handleInputChange}
-                className="w-full border p-2 rounded-md"
+                value={loggedInUser.email}
+                className="w-full border p-2 rounded-md bg-gray-100"
+                disabled={true}
                 readOnly
               />
             </div>
@@ -77,8 +65,8 @@ const User = () => {
                 type="text"
                 id="firstName"
                 name="firstName"
-                value={userData.firstName}
-                onChange={handleInputChange}
+                placeholder={loggedInUser.firstName}
+                ref={firstNameRef}
                 className="w-full border p-2 rounded-md"
               />
             </div>
@@ -90,31 +78,32 @@ const User = () => {
                 type="text"
                 id="lastName"
                 name="lastName"
-                value={userData.lastName}
-                onChange={handleInputChange}
+                placeholder={loggedInUser.lastName}
+                ref={lastNameRef}
                 className="w-full border p-2 rounded-md"
               />
             </div>
             <button
-              type="submit"
+              type="button"
               className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+              onClick={()=>saveUserData()}
             >
               Save Changes
             </button>
-          </form>
+          </div>
         ) : (
           <div>
             <p>
-              <strong>Username:</strong> {userData.username}
+              <strong>Username:</strong> {loggedInUser.username}
             </p>
             <p>
-              <strong>Email:</strong> {userData.email}
+              <strong>Email:</strong> {loggedInUser.email}
             </p>
             <p>
-              <strong>First Name:</strong> {userData.firstName}
+              <strong>First Name:</strong> {loggedInUser.firstName}
             </p>
             <p>
-              <strong>Last Name:</strong> {userData.lastName}
+              <strong>Last Name:</strong> {loggedInUser.lastName}
             </p>
             <button
               onClick={() => setIsEditing(true)}

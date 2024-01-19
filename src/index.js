@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -12,6 +12,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
 import Cart from "./components/Cart";
+import UserContext from "./utils/userContext";
 
 //without React
 // const heading = document.createElement("h1");
@@ -46,12 +47,16 @@ import Cart from "./components/Cart";
 // const Heading = <h1>JSX Heading</h1>;
 
 const AppLayout = ()=>{
+    const userDataInfo = useContext(UserContext).userData;
+    const [userData, setUserData] = useState(userDataInfo);
     return(<div className=" flex flex-col min-h-screen">
+        <UserContext.Provider value={{loggedInUser : userData, setUserData}}>
         <Provider store={appStore} >
             <Header />
             <Outlet />
             <Footer/>
         </Provider>
+        </UserContext.Provider>
     </div>)
 }
 

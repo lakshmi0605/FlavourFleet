@@ -18,17 +18,16 @@ const Cart = () => {
   return (
     <div className="mx-60 p-4">
         <div className="flex justify-between  items-center m-4 p-4">
-            <div className="te">
-      <h1 className="text-2xl font-bold">Cart</h1>
-      </div>
-      <div>
-      <button
-          className=" p-2 m-2 bg-black text-white rounded-lg"
-          onClick={handleClearCart}
-        >
-          Clear Cart
-        </button>
-        </div>
+            <div className="">
+            <h1 className="text-2xl font-bold">Cart</h1>
+            </div>
+          <div>
+          <button
+              className=" p-2 m-2 bg-black text-white rounded-lg"
+              onClick={handleClearCart}>
+              Clear Cart
+            </button>
+            </div>
         </div>
       <div className="text-center m-auto">
         {cartItems?.length === 0 && (

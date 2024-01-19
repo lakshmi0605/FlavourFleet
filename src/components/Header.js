@@ -1,9 +1,13 @@
 import { useSelector } from "react-redux";
 import myLogo from "../images/Logo.png"
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import UserContext from "../utils/userContext";
 
 const Header = ()=>{
-const cartItems = useSelector((store)=>store.cart.items)
+
+    const {loggedInUser} = useContext(UserContext);
+    const cartItems = useSelector((store)=>store.cart.items)
 
     return (
     <header className="sticky top-0 bg-gray-50 z-50">
@@ -18,7 +22,7 @@ const cartItems = useSelector((store)=>store.cart.items)
                 <li className="p-6 hover:scale-125 text-lg"><Link to="/contact" className="focus:text-blue-800">Contact</Link></li>
                 <li className="p-6 hover:scale-125 text-lg"><Link to="/cart" className="focus:text-blue-800">Cart ({cartItems.length})</Link></li>
                 <li className="p-6 hover:scale-125 text-lg"><Link to="/user" className="focus:text-blue-800"><div className="rounded-full bg-blue-900 text-white w-10 h-10 flex items-center justify-center">
-      JD
+      {loggedInUser.firstName[0].toUpperCase()}{loggedInUser.lastName[0].toUpperCase()}
     </div></Link></li>
             </ul>
         </div>
