@@ -21,25 +21,33 @@ const RestaurantMenu = ()=>{
     const categoryItems = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((category)=> category?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
 
     return (
-    <div className="text-center mx-60">
-        <div className=" mt-4 p-4">
-        <div className="flex justify-between items-center ">
-        <div className="text-left">
-        <h1 className="font-bold text-3xl">{name}</h1>
-        <h2 className="">{cuisines.join(", ")}</h2>
-        <h2 className="">{costForTwoMessage}</h2>
-        </div>
-        <div className="bg-white-50 shadow my-4 p-2 border border-gray">
-            <h2 className="text-center text-green-600">★ {avgRatingString} </h2>
-            <hr className="h-px my-2 bg-gray-200 border-0"></hr>
-            <h2 className="text-xs">{totalRatingsString}</h2>
-        </div>
-        </div>
+        <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
+        <div className="mt-4 p-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="text-left mb-4 md:mb-0 md:mr-4">
+              <h1 className="font-bold text-3xl">{name}</h1>
+              <h2>{cuisines.join(", ")}</h2>
+              <h2>{costForTwoMessage}</h2>
+            </div>
+            <div className="bg-white-50 shadow my-4 p-2 border border-gray">
+        <h2 className="text-center text-green-600">★ {avgRatingString} </h2>
+        <hr className="h-px my-2 bg-gray-200 border-0"></hr>
+        <h2 className="text-xs">{totalRatingsString}</h2>
+      </div>
+          </div>
         </div>
         <div>
-        {categoryItems.map((category,index)=><ResMenuCategory  key={category?.card?.card?.title} menuCategory={category} isActive={index === activeIndex ? true : false} setActiveIndex={()=> handleAccordion(index)}/>)}
+          {categoryItems.map((category, index) => (
+            <ResMenuCategory
+              key={category?.card?.card?.title}
+              menuCategory={category}
+              isActive={index === activeIndex}
+              setActiveIndex={() => handleAccordion(index)}
+            />
+          ))}
         </div>
-    </div>)
+      </div>
+      )
 }
 
 export default RestaurantMenu;

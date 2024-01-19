@@ -12,24 +12,25 @@ const CategoryItem =({itemList})=>{
     }
 
     return(
-    <div className="flex justify-between p-4 m-1/2 border-b"><div className="text-left w-9/12">
+      <div className="flex flex-col sm:flex-row justify-between p-4 m-1/2 border-b">
+      <div className="text-left md:w-9/12">
         <h1 className="font-bold">{name} - ₹ {price ? price/100 : defaultPrice/100}</h1>
         <p className="text-sm">{description}</p>
+      </div>
+      <div className="md:w-3/12 p-4 relative">
+        <div>
+          <button
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 p-2 rounded-lg bg-black text-white shadow-lg "
+            onClick={() => handleAddItem(itemList)}
+          >
+            Add +
+          </button>
+        </div>
+        <img src={CORS_URL+ITEMIMG_URL + imageId} className="w-full object-fill md:h-auto" alt="Item Image" /> 
+      </div>
+      <div className="md:hidden"><hr className="solid"></hr></div>
     </div>
-    <div className="w-3/12 p-4 relative">
-   
-            <div>
-              <button
-                className="absolute bottom-0 left-1/2 transform -translate-x-1/2 p-2  rounded-lg bg-black text-white shadow-lg "
-                onClick={() => handleAddItem(itemList)}
-              >
-                Add +
-              </button>
-              </div>
-              <img src={CORS_URL+ITEMIMG_URL + imageId} className="w-full object-fill" /> 
-          </div>
-          <div><hr className="solid "></hr></div>
-    </div>)
+    )
 }
 
 export const withDeletebtn = (CategoryItem)=>{
