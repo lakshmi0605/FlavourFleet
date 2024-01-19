@@ -12,7 +12,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import appStore from "./utils/appStore";
 import { Provider } from "react-redux";
 import Cart from "./components/Cart";
-import UserContext from "./utils/userContext";
+import UserContext from "./utils/UserContext";
 
 //without React
 // const heading = document.createElement("h1");
