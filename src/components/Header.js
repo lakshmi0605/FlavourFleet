@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import myLogo from "../images/Logo.png"
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import UserContext from "../utils/userContext";
+import UserContext from "../utils/UserContext";
 
 const Header = ()=>{
 
