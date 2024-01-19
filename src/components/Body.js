@@ -26,6 +26,7 @@ const Body = () => {
       <h3 className="text-xl md:text-3xl">Flavor on the fly!</h3>
   
       <input
+        data-testid="searchInput"
         type="text"
         placeholder="Search Restaurants"
         className="w-full md:w-1/2 h-12 p-4 mt-4 rounded-2xl border-2 border-gray-300 focus:outline-none focus:border-blue-500"
@@ -36,7 +37,7 @@ const Body = () => {
     <div className="flex flex-wrap items-stretch justify-center">
       {filteredRestaurants.map((res) => (
         <Link to={"/restaurants/" + res?.info?.id} key={res?.info?.id}>
-          <div className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-2">
+          <div className="w-full md:w-2/3 lg:w-1/3 xl:w-1/4 ">
             {res?.info?.avgRating >= 4.5 ? (<RestaurantCardPromoted resData={res} />) : (<RestaurantCard resData={res} />)}
           </div>
         </Link>

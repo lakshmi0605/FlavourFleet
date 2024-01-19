@@ -12,7 +12,7 @@ const CategoryItem =({itemList})=>{
     }
 
     return(
-      <div className="flex flex-col sm:flex-row justify-between p-4 m-1/2 border-b">
+      <div className="flex flex-col sm:flex-row justify-between p-4 m-1/2 border-b" data-testid="foodItem">
       <div className="text-left md:w-9/12">
         <h1 className="font-bold">{name} - ₹ {price ? price/100 : defaultPrice/100}</h1>
         <p className="text-sm">{description}</p>

@@ -11,7 +11,7 @@ const Header = ()=>{
 
     return (
         <header className="sticky top-0 bg-gray-50 z-50">
-        <div className="flex justify-between items-center shadow p-2 md:p-4">
+        <div className="flex justify-between items-center shadow">
           <div>
             <Link to="/"><img className="w-24 md:w-32 p-2 mx-4 md:mx-10" src={myLogo} alt="Logo" /></Link>
           </div>

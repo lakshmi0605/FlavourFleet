@@ -11,7 +11,7 @@ const ResMenuCategory = ({menuCategory, isActive, setActiveIndex})=>{
     return (
        <div className="text-center m-3 p-4 shadow bg-gray-100">
         <div className="flex flex-col sm:flex-row justify-between items-center" onClick={handleAccordionClick}>
-            <h1>{menuCategory?.card?.card?.title}</h1>
+            <h1 className="font-bold">{menuCategory?.card?.card?.title}  ({itemCards.length})</h1>
             <h2>▾</h2>
         </div>
         <div className="m-1">
