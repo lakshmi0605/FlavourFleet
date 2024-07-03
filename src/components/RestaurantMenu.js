@@ -14,11 +14,10 @@ const RestaurantMenu = ()=>{
     const handleAccordion= (index) => {
         setActiveIndex((prev) => (prev === index ? null : index));
       };
-
-    if (resInfo === null) return (<div className="text-center"><Shimmer /></div>)
-
-    const {name, cuisines, costForTwoMessage,totalRatingsString, avgRatingString} = resInfo?.cards[0]?.card.card?.info;
-    const categoryItems = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((category)=> category?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+     
+    if (resInfo === null) return (<div className="text-center py-20">Loading...</div>)
+    const {name, cuisines, costForTwoMessage,totalRatingsString, avgRatingString} = resInfo?.cards[2]?.card.card?.info;
+    const categoryItems = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((category)=> category?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
 
     return (
         <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">

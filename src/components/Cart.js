@@ -34,9 +34,11 @@ const Cart = () => {
     {cartItems?.length === 0 && (
       <h1>Cart is empty. Add Items to the cart!</h1>
     )}
-    {cartItems.map((item) => (
-      <CartItemComponent key={item?.itemList?.id} itemList={item} />
-    ))}
+    {cartItems.map((item) => {
+  
+     return <CartItemComponent key={item.id} itemList={item} showAddButton={false}/>
+    }
+    )}
   </div>
 </div>
 
