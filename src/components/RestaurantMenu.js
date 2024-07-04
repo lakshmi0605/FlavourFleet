@@ -17,7 +17,8 @@ const RestaurantMenu = ()=>{
      
     if (resInfo === null) return (<div className="text-center py-20">Loading...</div>)
     const {name, cuisines, costForTwoMessage,totalRatingsString, avgRatingString} = resInfo?.cards[2]?.card.card?.info;
-    const categoryItems = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((category)=> category?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+    const categoryItems = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((category)=> category?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+   
 
     return (
         <div className="container mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
@@ -36,14 +37,16 @@ const RestaurantMenu = ()=>{
           </div>
         </div>
         <div>
-          {categoryItems.map((category, index) => (
+          {categoryItems ? categoryItems.map((category, index) => {
+            return(
             <ResMenuCategory
               key={category?.card?.card?.title}
               menuCategory={category}
               isActive={index === activeIndex}
               setActiveIndex={() => handleAccordion(index)}
             />
-          ))}
+          )}
+          ) : <h1 className="text-center">Restaurant is temporarily closed!!!</h1>}
         </div>
       </div>
       )

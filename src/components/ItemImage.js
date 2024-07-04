@@ -20,18 +20,20 @@ const ItemImage = ({ imageId }) => {
 export const withAddBtn = (ItemImage) => {
   return ({itemList,...props}) => {
     const [buttonText, setButtonText] = useState('Add +');
+    const [disabled, setDisabled] = useState(false);
     const dispatch = useDispatch();
     const handleAddItem = () => {
       dispatch(addItem(itemList));
       setButtonText('Added');
+      setDisabled(true);
     };
 
     return (
       <div className="relative">
         <ItemImage {...props} />
         <button
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 p-2 rounded-lg bg-black text-white shadow-lg"
-          onClick={() => handleAddItem()}
+          className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 p-2 rounded-lg  shadow-lg ${disabled? 'bg-gray-300 cursor-not-allowed text-black' : 'bg-black text-white' }`}
+          onClick={() => handleAddItem() } disabled={disabled}
         >
           {buttonText}
         </button>

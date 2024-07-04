@@ -20,7 +20,7 @@
                             "locality": "old Mla Quarters Road",
                             "areaName": "Himayat Nagar",
                             "costForTwo": "30000",
-                            "costForTwoMessage": "₹300 for two",
+                            "costForTwoMessage": "$300 for two",
                             "cuisines": [
                                 "Burgers",
                                 "American"
@@ -42,7 +42,7 @@
                                 ],
                                 "totalFee": 3600,
                                 "icon": "v1648635511/Delivery_fee_new_cjxumu",
-                                "message": "1.5 kms | ₹36 Delivery fee will apply"
+                                "message": "1.5 kms | $36 Delivery fee will apply"
                             },
                             "parentId": "371281",
                             "avgRatingString": "4.3",
@@ -69,10 +69,10 @@
                                 "restaurantClosedMeta": {}
                             },
                             "aggregatedDiscountInfo": {
-                                "header": "Flat ₹125 off",
+                                "header": "Flat $125 off",
                                 "shortDescriptionList": [
                                     {
-                                        "meta": "Flat ₹125 off on orders above ₹299",
+                                        "meta": "Flat $125 off on orders above $299",
                                         "discountType": "Flat",
                                         "operationType": "RESTAURANT"
                                     },
@@ -84,7 +84,7 @@
                                 ],
                                 "descriptionList": [
                                     {
-                                        "meta": "Flat ₹125 off on orders above ₹299 | Use code SWIGGYWEEKENDS",
+                                        "meta": "Flat $125 off on orders above $299 | Use code SWIGGYWEEKENDS",
                                         "discountType": "Flat",
                                         "operationType": "RESTAURANT"
                                     },
@@ -116,10 +116,10 @@
                             ],
                             "totalRatings": 5000,
                             "aggregatedDiscountInfoV2": {
-                                "header": "Flat ₹125 off",
+                                "header": "Flat $125 off",
                                 "shortDescriptionList": [
                                     {
-                                        "meta": "Flat ₹125 off on orders above ₹299",
+                                        "meta": "Flat $125 off on orders above $299",
                                         "discountType": "Flat",
                                         "operationType": "RESTAURANT"
                                     },
@@ -131,7 +131,7 @@
                                 ],
                                 "descriptionList": [
                                     {
-                                        "meta": "Flat ₹125 off on orders above ₹299 | Use code SWIGGYWEEKENDS",
+                                        "meta": "Flat $125 off on orders above $299 | Use code SWIGGYWEEKENDS",
                                         "discountType": "Flat",
                                         "operationType": "RESTAURANT"
                                     },
@@ -154,8 +154,8 @@
                                         "discountType": "Flat",
                                         "value": 125
                                     },
-                                    "lockedMessage": "Add items worth ₹<amount> to save ₹125 | Code SWIGGYWEEKENDS",
-                                    "unlockedMessage": "SWIGGYWEEKENDS Coupon Unlocked! Use it to save ₹125",
+                                    "lockedMessage": "Add items worth $<amount> to save $125 | Code SWIGGYWEEKENDS",
+                                    "unlockedMessage": "SWIGGYWEEKENDS Coupon Unlocked! Use it to save $125",
                                     "logoCtx": {}
                                 }
                             ],
@@ -164,7 +164,7 @@
                             },
                             "expectationNotifiers": [
                                 {
-                                    "text": "1.5 kms | ₹36 Delivery fee will apply",
+                                    "text": "1.5 kms | $36 Delivery fee will apply",
                                     "icon": {
                                         "imageId": "v1648635511/Delivery_fee_new_cjxumu"
                                     },
@@ -172,7 +172,7 @@
                                         "cta": {}
                                     },
                                     "type": "DISTANCE_FEE_NON_FOOD_LM",
-                                    "enrichedText": "<b>1.5 kms</b> | ₹36 Delivery fee will apply",
+                                    "enrichedText": "<b>1.5 kms</b> | $36 Delivery fee will apply",
                                     "halfCardPopup": {
                                         "halfCardPopupHeader": {}
                                     }
@@ -227,7 +227,7 @@
                                 "offers": [
                                     {
                                         "info": {
-                                            "header": "FLAT ₹125 OFF",
+                                            "header": "FLAT $125 OFF",
                                             "offerTag": "FLAT DEAL",
                                             "offerTagColor": "#E46D47",
                                             "offerIds": [
@@ -235,7 +235,7 @@
                                             ],
                                             "expiryTime": "1970-01-01T00:00:00Z",
                                             "couponCode": "USE SWIGGYWEEKENDS",
-                                            "description": "ABOVE ₹299",
+                                            "description": "ABOVE $299",
                                             "offerType": "offers",
                                             "restId": "624472",
                                             "offerLogo": "offers/generic",
@@ -247,7 +247,7 @@
                                     },
                                     {
                                         "info": {
-                                            "header": "FLAT ₹100 OFF",
+                                            "header": "FLAT $100 OFF",
                                             "offerTag": "FLAT DEAL",
                                             "offerTagColor": "#E46D47",
                                             "offerIds": [
@@ -255,7 +255,7 @@
                                             ],
                                             "expiryTime": "1970-01-01T00:00:00Z",
                                             "couponCode": "USE FLATDEAL",
-                                            "description": "ABOVE ₹499",
+                                            "description": "ABOVE $499",
                                             "offerType": "offers",
                                             "restId": "624472",
                                             "offerLogo": "offers/generic",
@@ -267,7 +267,7 @@
                                     },
                                     {
                                         "info": {
-                                            "header": "FLAT ₹100 OFF",
+                                            "header": "FLAT $100 OFF",
                                             "offerTagColor": "#E46D47",
                                             "logoBottom": "rng/md/ads/production/cd60f23dc2ac83be906d0f6ba55d3d12",
                                             "offerIds": [
@@ -275,7 +275,7 @@
                                             ],
                                             "expiryTime": "1970-01-01T00:00:00Z",
                                             "couponCode": "NO CODE REQUIRED",
-                                            "description": "ABOVE ₹550",
+                                            "description": "ABOVE $550",
                                             "offerType": "offers",
                                             "restId": "624472",
                                             "offerLogo": "rng/md/ads/production/cd60f23dc2ac83be906d0f6ba55d3d12",
@@ -287,7 +287,7 @@
                                     },
                                     {
                                         "info": {
-                                            "header": "20% OFF UPTO ₹100",
+                                            "header": "20% OFF UPTO $100",
                                             "offerTagColor": "#E46D47",
                                             "logoBottom": "rng/md/ads/production/be912a4c543f00172d9f82c033ee7239",
                                             "offerIds": [
@@ -295,7 +295,7 @@
                                             ],
                                             "expiryTime": "1970-01-01T00:00:00Z",
                                             "couponCode": "USE RUPAY100",
-                                            "description": "ABOVE ₹129",
+                                            "description": "ABOVE $129",
                                             "offerType": "offers",
                                             "restId": "624472",
                                             "offerLogo": "rng/md/ads/production/be912a4c543f00172d9f82c033ee7239",
@@ -307,7 +307,7 @@
                                     },
                                     {
                                         "info": {
-                                            "header": "15% OFF UPTO ₹300",
+                                            "header": "15% OFF UPTO $300",
                                             "offerTagColor": "#E46D47",
                                             "logoBottom": "rng/md/ads/production/15fb1cfe885005447dc8375e7970600f",
                                             "offerIds": [
@@ -315,7 +315,7 @@
                                             ],
                                             "expiryTime": "1970-01-01T00:00:00Z",
                                             "couponCode": "USE CITIFOODIE",
-                                            "description": "ABOVE ₹1200",
+                                            "description": "ABOVE $1200",
                                             "offerType": "offers",
                                             "restId": "624472",
                                             "offerLogo": "rng/md/ads/production/15fb1cfe885005447dc8375e7970600f",

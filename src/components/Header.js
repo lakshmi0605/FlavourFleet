@@ -17,10 +17,10 @@ const Header = ()=>{
           </div>
           <div>
             <ul className="flex items-center p-2 m-2 md:m-4">
-              <li className="px-4 md:px-6 hover:scale-125 text-lg"><Link to="/" className="focus:text-blue-800">Home</Link></li>
-              <li className="px-4 md:px-6 hover:scale-125 text-lg"><Link to="/about" className="focus:text-blue-800">About</Link></li>
-              <li className="px-4 md:px-6 hover:scale-125 text-lg"><Link to="/contact" className="focus:text-blue-800">Contact</Link></li>
-              <li className="px-4 md:px-6 hover:scale-125 text-lg"><Link to="/cart" className="focus:text-blue-800">Cart ({cartItems.length})</Link></li>
+              <li className="px-4 md:px-6 hover:font-extrabold text-lg"><Link to="/" className="focus:text-blue-800 ">Home</Link></li>
+              <li className="px-4 md:px-6 hover:font-extrabold text-lg"><Link to="/about" className="focus:text-blue-800">About</Link></li>
+              <li className="px-4 md:px-6 hover:font-extrabold text-lg"><Link to="/contact" className="focus:text-blue-800">Contact</Link></li>
+              <li className="px-4 md:px-6 hover:font-extrabold text-lg"><Link to="/cart" className="focus:text-blue-800">Cart ({cartItems.length})</Link></li>
               <li className="px-4 md:px-6 hover:scale-125 text-lg">
                 <Link to="/user" className="focus:text-blue-800">
                   <div className="rounded-full bg-blue-900 text-white w-8 md:w-10 flex items-center justify-center">

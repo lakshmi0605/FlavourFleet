@@ -5,7 +5,7 @@
       "cloudinaryImageId": "b2edbc28b7b8219d6e0a9c049ce06658",
       "locality": "old Mla Quarters Road",
       "areaName": "Himayat Nagar",
-      "costForTwo": "₹300 for two",
+      "costForTwo": "$300 for two",
       "cuisines": [
           "Burgers",
           "American",
@@ -41,8 +41,8 @@
           }
       },
       "aggregatedDiscountInfoV3": {
-          "header": "₹120 OFF",
-          "subHeader": "ABOVE ₹199",
+          "header": "$120 OFF",
+          "subHeader": "ABOVE $199",
           "discountTag": "FLAT DEAL"
       },
       "orderabilityCommunication": {
